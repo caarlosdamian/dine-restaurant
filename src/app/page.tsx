@@ -1,8 +1,12 @@
+import { Events, Featured, Hero, Menu } from '@/components';
 
 export default function Home() {
   return (
     <main className="">
-     testing
+      <Hero />
+      <Featured />
+      <Menu />
+      <Events />
     </main>
-  )
+  );
 }
