@@ -5,9 +5,10 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="bg-[url('/images/homepage/hero-bg-mobile@2x.jpg')] bg-cover bg-no-repeat h-screen w-screen p-6 md:px-10 md:pt-[372px] lg:px-[165px] lg:py-[65px] md:bg-[url('/images/homepage/hero-bg-tablet@2x.jpg')] lg:md:bg-[url('/images/homepage/hero-bg-desktop@2x.jpg')] flex items-center justify-center flex-col gap-9 md:gap-[38px] lg:items-start lg:pt-16 lg:justify-start lg:gap-40"
+      className="
+       flex items-center justify-center flex-col pt-40 px-6 gap-9 md:pt-[374px] md:gap-[38px] md:px-10 lg:pt-16 lg:px-[165px] lg:gap-[153px] lg:items-start lg:justify-start bg-cover bg-no-repeat h-screen w-screen bg-[url('/images/homepage/hero-bg-mobile@2x.jpg')] md:bg-[url('/images/homepage/hero-bg-tablet@2x.jpg')] lg:bg-[url('/images/homepage/hero-bg-desktop@2x.jpg')]"
     >
-      <div className="relative h-8 w-20">
+      <div className="relative h-[82.4px] w-20 md:w-[103px] md:h-[40px]">
         <Image src="/logo.svg" alt="logo" fill className="object-contain" />
       </div>
       <div className="flex flex-col items-center gap-5 text-center text-white lg:text-left lg:items-start lg:gap-3">
