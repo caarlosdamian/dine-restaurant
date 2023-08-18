@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { Button } from '..';
 
 export const Hero = () => {
   return (
@@ -15,11 +16,11 @@ export const Hero = () => {
         <h1 className="text-[32px] font-light leading-[40px] tracking-[-0.4px] md:text-5xl md:leading-[64px] md:tracking-[-0.6px] w-96 lg:text-[80px] lg:w-[508px] lg:tracking-[-1px] lg:leading-[80px]">
           Exquisite dining since 1989
         </h1>
-        <p className="text-base font-normal leading-7 w-[327px] md:text-xl md:leading-8 md:w-[573px] lg:w-[445px]">
+        <p className="text-base font-normal leading-7 w-[327px] mb-8 md:text-xl md:leading-8 md:w-[573px] lg:w-[445px] lg:mb-5">
           Experience our seasonal menu in beautiful country surroundings. Eat
           the freshest produce from the comfort of our farmhouse.
         </p>
-        <div className="h-[64px]"></div>
+        <Button label="BOOK A TABLE" />
       </div>
     </section>
   );
