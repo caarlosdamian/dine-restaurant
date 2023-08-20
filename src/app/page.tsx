@@ -2,7 +2,7 @@ import { Events, Featured, Footer, Hero, Menu } from '@/components';
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="overflow-hidden">
       <Hero />
       <Featured />
       <Menu />

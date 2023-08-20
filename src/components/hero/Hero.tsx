@@ -7,7 +7,7 @@ export const Hero = () => {
     <section
       id="hero"
       className="
-       flex items-center min-h-[748px] md:min-h-[992px] md:pb-[120px] justify-center flex-col pt-40 px-6 gap-9 md:pt-[374px] md:gap-[38px] md:px-10 lg:pt-16 lg:px-[165px] lg:gap-[153px] lg:items-start lg:justify-start bg-cover bg-no-repeat h-screen w-screen bg-[url('/images/homepage/hero-bg-mobile@2x.jpg')] md:bg-[url('/images/homepage/hero-bg-tablet@2x.jpg')] lg:bg-[url('/images/homepage/hero-bg-desktop@2x.jpg')]"
+       bg-center flex items-center min-h-[748px] md:min-h-[992px] md:pb-[120px] justify-center flex-col pt-40 px-6 gap-9 md:pt-[374px] md:gap-[38px] md:px-10 lg:pt-16 lg:px-[165px] lg:gap-[153px] lg:items-start lg:justify-start bg-cover bg-no-repeat h-screen w-screen bg-[url('/images/homepage/hero-bg-mobile@2x.jpg')] md:bg-[url('/images/homepage/hero-bg-tablet@2x.jpg')] lg:bg-[url('/images/homepage/hero-bg-desktop@2x.jpg')]"
     >
       <div className="relative h-[82.4px] w-20 md:w-[103px] md:h-[40px]">
         <Image src="/logo.svg" alt="logo" fill className="object-contain" />

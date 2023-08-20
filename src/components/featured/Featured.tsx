@@ -5,7 +5,7 @@ import { Images } from '../images/Images';
 
 export const Featured = () => {
   return (
-    <div className="flex flex-col gap-24 items-center relative mt-80 px-6 pb-16 md:px-[98px] lg:gap-[320px] lg:px-[165px] lg:mt-[178px] lg:min-h-[1400px]">
+    <section id='featured' className="flex flex-col gap-24 items-center relative mt-80 px-6 pb-16 md:px-[98px] lg:gap-[320px] lg:px-[165px] lg:mt-[178px] lg:min-h-[1400px]">
       <Image
         src="/images/patterns/pattern-curve-top-right.svg"
         alt="patterns-one"
@@ -33,14 +33,16 @@ export const Featured = () => {
           className="flex flex-col gap-9 even:mt-14 items-center md:even:mt-0 lg:justify-start lg:items-end lg:odd:items-start lg:odd:mt-[200px] lg:even:mt-0 lg:w-[1110px]"
         >
           <Images images={card.images} index={index} />
-          <Image
-            src="/images/patterns/pattern-divide.svg"
-            alt="divider"
-            width={71}
-            height={7}
-            className={`object-contain mt-3`}
-          />
-          <div className={`text-center text-ebony_clay flex flex-col gap-3 items-center md:gap-7 lg:text-left`}>
+          <div
+            className={`text-center text-ebony_clay flex flex-col gap-3 items-center md:gap-7 lg:text-left`}
+          >
+            <Image
+              src="/images/patterns/pattern-divide.svg"
+              alt="divider"
+              width={71}
+              height={7}
+              className={`object-contain mt-3 lg:self-start`}
+            />
             <h1 className="text-[32px] font-bold leading-10 tracking-tighter w-56 md:text-5xl md:leading-[48px] md:w-[350px] lg:w-[445px]">
               {card.title}
             </h1>
@@ -50,6 +52,6 @@ export const Featured = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
