@@ -7,7 +7,6 @@ export default function Home() {
       <Featured />
       <Menu />
       <Events />
-      <Footer/>
     </main>
   );
 }

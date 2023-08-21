@@ -53,3 +53,36 @@ export const menuInfo = [
     ],
   },
 ];
+
+export const sectionInfo = [
+  {
+    id: 'Family',
+    title: 'Family Gathering',
+    desc: 'We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.',
+    images: [
+      '/images/homepage/family-gathering-mobile.jpg',
+      '/images/homepage/family-gathering-tablet.jpg',
+      '/images/homepage/family-gathering-desktop.jpg',
+    ],
+  },
+  {
+    id: 'Special',
+    title: 'Special Events',
+    desc: 'Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.',
+    images: [
+      '/images/homepage/special-events-mobile.jpg',
+      '/images/homepage/special-events-tablet.jpg',
+      '/images/homepage/special-events-desktop.jpg',
+    ],
+  },
+  {
+    id: 'Social',
+    title: 'Social Events',
+    desc: 'Are you looking to have a larger social event? No problem! We’re more than happy to cater for big parties. We’ll work with you to make your event a hit with everyone.',
+    images: [
+      '/images/homepage/social-events-mobile.jpg',
+      '/images/homepage/social-events-tablet.jpg',
+      '/images/homepage/social-events-desktop.jpg',
+    ],
+  },
+];

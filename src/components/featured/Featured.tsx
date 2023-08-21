@@ -15,14 +15,14 @@ export const Featured = () => {
       />
       <Image
         src="/images/patterns/pattern-curve-top-left.svg"
-        alt="patterns-one"
+        alt="patterns-left"
         height={320}
         width={895}
         className="hidden md:block absolute  right-[-390px] bottom-0"
       />
       <Image
         src="/images/patterns/pattern-lines.svg"
-        alt="patterns-one"
+        alt="patterns-lines"
         height={76}
         width={160}
         className="hidden md:block absolute bottom-[450px] right-10 lg:bottom-72 lg:right-14 lg:z-30"
