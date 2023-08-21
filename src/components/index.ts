@@ -4,3 +4,4 @@ export { Featured } from "./featured/Featured";
 export { Hero } from "./hero/Hero";
 export { Menu } from "./menu/Menu";
 export { Events } from "./events/Events";
+export { Ready } from "./ready/Ready";

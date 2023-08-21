@@ -70,7 +70,7 @@ export const Events = () => {
               {sectionInfo[eventIndex].desc}
             </h2>
           </div>
-          <Button label="BOOK A TABLE" />
+          <Button variant='dark' label="BOOK A TABLE" />
         </div>
       </div>
     </section>

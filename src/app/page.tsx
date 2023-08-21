@@ -1,4 +1,4 @@
-import { Events, Featured, Footer, Hero, Menu } from '@/components';
+import { Events, Featured, Footer, Hero, Menu, Ready } from '@/components';
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Featured />
       <Menu />
       <Events />
+      <Ready />
     </main>
   );
 }
