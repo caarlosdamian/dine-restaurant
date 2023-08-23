@@ -7,7 +7,7 @@ export const Menu = () => {
   return (
     <section
       id="menu"
-      className="bg-black h-full w-screen px-6 pt-[72px] pb-[100px] flex flex-col items-center gap-[85px] md:px-24 lg:pt-52 lg:pb-24 lg:flex-row lg:items-start lg:justify-center"
+      className="bg-code_gray h-full w-screen px-6 pt-[72px] pb-[100px] flex flex-col items-center gap-[85px] md:px-24 lg:pt-52 lg:pb-24 lg:flex-row lg:items-start lg:justify-center"
     >
       <div className="flex flex-col gap-3 text-white text-center items-center md:w-[445px] md:gap-7 lg:items-start lg:text-start">
         <Image

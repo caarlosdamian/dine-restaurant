@@ -1,12 +1,14 @@
-import { BookingHero } from '@/components/bookingHero/BookingHero'
-import React from 'react'
+import { BookingHero } from '@/components/bookingHero/BookingHero';
+import { Form } from '@/components/form/Form';
+import React from 'react';
 
 const BookingPage = () => {
   return (
     <div>
-      <BookingHero/>
+      <BookingHero />
+      <Form />
     </div>
-  )
-}
+  );
+};
 
-export default BookingPage
+export default BookingPage;

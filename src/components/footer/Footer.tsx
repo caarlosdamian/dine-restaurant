@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Footer = () => {
   return (
-    <footer className="py-20 px-6 text-white bg-black flex flex-col items-center gap-11 md:flex-row md:items-start md:justify-start md:py-16 md:px-10 md:gap-32 lg:px-[165px] lg:gap-[190px]">
+    <footer className="py-20 px-6 text-white bg-code_gray flex flex-col items-center gap-11 md:flex-row md:items-start md:justify-start md:py-16 md:px-10 md:gap-32 lg:px-[165px] lg:gap-[190px]">
       <div className="relative h-[40px] w-[103px]">
         <Image src="/logo.svg" alt="logo" fill className="object-contain" />
       </div>

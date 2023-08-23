@@ -4,7 +4,7 @@ import { Button } from '..';
 
 export const BookingHero = () => {
   return (
-    <div className="h-[600px]  bg-[url('/images/booking/hero-bg-mobile.jpg')] md:bg-[url('/images/booking/hero-bg-tablet.jpg')]  lg:bg-[url('/images/booking/hero-bg-desktop.jpg')] bg-no-repeat bg-cover px-6 py-14 flex flex-col items-center gap-11 justify-center md:px-10 md:justify-start md:gap-[70px] lg:px-[165px] lg:py-16 lg:items-start lg:gap-[154px]">
+    <div className="h-[600px] pb-[228px]  bg-[url('/images/booking/hero-bg-mobile.jpg')] md:bg-[url('/images/booking/hero-bg-tablet.jpg')]  lg:bg-[url('/images/booking/hero-bg-desktop.jpg')] bg-no-repeat bg-cover px-6 py-14 flex flex-col items-center gap-11 justify-center md:px-10 md:justify-start md:gap-[70px] lg:px-[165px] lg:py-16 lg:items-start lg:gap-[154px]">
       <div className="relative h-[82.4px] w-20 md:w-[103px] md:h-[40px] md:self-start">
         <Image src="/logo.svg" alt="logo" fill className="object-contain" />
       </div>
