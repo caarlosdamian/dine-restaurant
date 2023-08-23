@@ -16,7 +16,10 @@ export const Form = () => {
   } = useForm<Inputs>();
 
   return (
-    <form onSubmit={handleSubmit((data)=>console.log(data))} className="bg-white h-[536px] relative">
+    <form
+      onSubmit={handleSubmit((data) => console.log(data))}
+      className="bg-white h-[536px] relative"
+    >
       <div
         className="bg-white  h-[585px] w-[327px] absolute top-[-136px] left-[50%] right-[50%] translate-x-[-50%] p-8"
         style={{ boxShadow: '0px 75px 100px -50px rgba(56, 66, 85, 0.50)' }}
@@ -33,7 +36,7 @@ export const Form = () => {
             This field is required
           </span>
         </div>
-        <button type='submit'>Click</button>
+        <button type="submit">Click</button>
       </div>
     </form>
   );
