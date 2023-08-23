@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '..';
+import Link from 'next/link';
 
 export const Ready = () => {
   return (
@@ -8,7 +9,9 @@ export const Ready = () => {
         <h1 className="text-[32px] text-white font-bold leading-10 tracking-[-0.4px] md:text-5xl md:leading-[48px]">
           Ready to make a reservation?
         </h1>
-        <Button variant="transparent" label="BOOK A TABLE" />
+        <Link href="/booking">
+          <Button variant="transparent" label="BOOK A TABLE" />
+        </Link>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { Button } from '..';
+import Link from 'next/link';
 
 export const Hero = () => {
   return (
@@ -20,7 +21,9 @@ export const Hero = () => {
           Experience our seasonal menu in beautiful country surroundings. Eat
           the freshest produce from the comfort of our farmhouse.
         </p>
-        <Button label="BOOK A TABLE" />
+        <Link href="/booking">
+          <Button label="BOOK A TABLE" />
+        </Link>
       </div>
     </section>
   );

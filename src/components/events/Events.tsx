@@ -4,6 +4,7 @@ import { ResponsiveImage } from '../responsiveImage/ResponsiveImage';
 import { sectionInfo } from '@/utils/info';
 import { Button } from '@/components/button/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Events = () => {
   const [eventIndex, setEventIndex] = useState<number>(0);
@@ -70,7 +71,9 @@ export const Events = () => {
               {sectionInfo[eventIndex].desc}
             </h2>
           </div>
-          <Button variant='dark' label="BOOK A TABLE" />
+          <Link href="/booking">
+            <Button variant="dark" label="BOOK A TABLE" />
+          </Link>
         </div>
       </div>
     </section>
