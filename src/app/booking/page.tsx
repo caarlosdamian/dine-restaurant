@@ -1,8 +1,11 @@
+import { BookingHero } from '@/components/bookingHero/BookingHero'
 import React from 'react'
 
 const BookingPage = () => {
   return (
-    <div>BookingPage</div>
+    <div>
+      <BookingHero/>
+    </div>
   )
 }
 
