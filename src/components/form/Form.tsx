@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import { Select } from '../select/Select';
 import { Button } from '..';
 import { Counter } from '../counter/Counter';
+import Image from 'next/image';
 
 const schema = yup
   .object({
@@ -66,10 +67,24 @@ export const Form = () => {
           people,
         };
       })}
-      className="bg-white h-[536px] relative flex flex-col"
+      className="bg-white h-[536px] relative lg:h-[312px]"
     >
+      <Image
+        src="images/patterns/pattern-curve-bottom-right.svg"
+        alt="pattern"
+        width={993}
+        height={320}
+        className="hidden lg:block absolute top-0 left-0 z-20"
+      />
+      <Image
+        src="/images/patterns/pattern-lines.svg"
+        alt="patterns-lines"
+        height={76}
+        width={160}
+        className="hidden lg:block absolute top-[166px] left-[665px] z-40"
+      />
       <div
-        className="flex flex-col gap-[34px] bg-white h-[585px] w-[327px] absolute top-[-136px] left-[50%] right-[50%] translate-x-[-50%] p-8"
+        className="flex flex-col gap-[34px] bg-white h-[585px] w-[327px] absolute top-[-136px] left-[50%] right-[50%] translate-x-[-50%] p-8 md:w-[540px] lg:left-[70%] xl:left-[60%] lg:top-[-340px] z-50 md:p-12"
         style={{ boxShadow: '0px 75px 100px -50px rgba(56, 66, 85, 0.50)' }}
       >
         <div className="flex flex-col gap-3">
@@ -98,9 +113,11 @@ export const Form = () => {
             </span>
           )}
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between md:gap-16 md:items-center">
           <div className="flex flex-col">
-            <span>Pick a date</span>
+            <span className="font-normal text-xl leading-7 md:min-w-[90px]">
+              Pick a date
+            </span>
             {errors['date'] &&
               getErrorFromObject(errors['date']).map((item) => (
                 <span
@@ -135,9 +152,11 @@ export const Form = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between md:gap-16 md:items-center">
           <div className="flex flex-col">
-            <span>Pick a time</span>
+            <span className="font-normal text-xl leading-7 md:min-w-[90px]">
+              Pick a time
+            </span>
             {errors['hours'] &&
               getErrorFromObject(errors['hours']).map((item) => (
                 <span
