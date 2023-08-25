@@ -15,12 +15,15 @@ export const Select = ({
       className="flex items-center gap-4 relative min-w-[88px]"
       onClick={() => setIsOpen((prev) => !prev)}
     >
-      <span>AM</span>
+      <span className="uppercase">{selectedItem}</span>
       <Image
         src="/images/icons/icon-arrow.svg"
         width={16}
         height={8}
         alt="arrow"
+        className={` transition-all ease-in-out duration-300 ${
+          isOpen && 'rotate-[180deg]'
+        }`}
       />
       <div
         style={{

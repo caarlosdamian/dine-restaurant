@@ -4,18 +4,22 @@ import { LabelInput } from '../labelInput/LabelInput';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Image from 'next/image';
-import { options } from '@/utils/info';
 import { Select } from '../select/Select';
+import { Button } from '..';
 
 const schema = yup
   .object({
     name: yup.string().required(),
     email: yup.string().required().email(),
-    mm: yup.string().required(),
-    dd: yup.string().required(),
-    yyyy: yup.string().required(),
-    meridian: yup.string(),
+    date: yup.object({
+      mm: yup.string().required(),
+      dd: yup.string().required(),
+      yyyy: yup.string().required(),
+    }),
+    hours: yup.object({
+      hour: yup.string().required(),
+      minute: yup.string().required(),
+    }),
   })
   .required();
 type FormData = yup.InferType<typeof schema>;
@@ -28,14 +32,30 @@ export const Form = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
   const [selectedItem, setSelectedItem] = useState('am');
-  const handleSelect = (id:string) => {
-    setSelectedItem(id)
-  }
+  const handleSelect = (id: string) => {
+    setSelectedItem(id);
+  };
+
+  const getErrorFromObject = (errors: object) => {
+    const entries = Object.entries(errors);
+    console.log(entries);
+    const errorsArray = entries.map((item) => ({
+      label: item[0],
+      error: item[1].message,
+    }));
+
+    return errorsArray;
+  };
 
   return (
     <form
-      onSubmit={handleSubmit((data: FormData) => console.log(data))}
-      className="bg-white h-[536px] relative"
+      onSubmit={handleSubmit((data: FormData) => {
+        const formData = {
+          ...data,
+          hours: { ...data.hours, meridian: selectedItem },
+        };
+      })}
+      className="bg-white h-[536px] relative flex flex-col"
     >
       <div
         className="flex flex-col gap-[34px] bg-white h-[585px] w-[327px] absolute top-[-136px] left-[50%] right-[50%] translate-x-[-50%] p-8"
@@ -55,7 +75,12 @@ export const Form = () => {
           )}
         </div>
         <div className="flex flex-col gap-3">
-          <LabelInput label="email" placeholder="Email" register={register} />
+          <LabelInput
+            label="email"
+            placeholder="Email"
+            register={register}
+            isValid={!errors['email']?.message}
+          />
           {errors['email']?.message && (
             <span className="text-[#B54949] text-[10px] font-medium tracking-[-0.125px]">
               {errors['email']?.message}
@@ -65,55 +90,72 @@ export const Form = () => {
         <div className="flex flex-col gap-2">
           <div className="flex flex-col">
             <span>Pick a date</span>
-            <span className="text-[#B54949] text-[10px] font-medium tracking-[-0.125px]">
-              This field is required
-            </span>
+            {errors['date'] &&
+              getErrorFromObject(errors['date']).map((item) => (
+                <span
+                  key={item.error}
+                  className="text-[#B54949] text-[10px] font-medium tracking-[-0.125px]"
+                >
+                  {item.error}
+                </span>
+              ))}
           </div>
           <div className="flex gap-4">
             <LabelInput
-              label="mm"
+              label="date.mm"
               placeholder="MM"
               register={register}
               maxLength={2}
+              isValid={!errors[`date`]}
             />
             <LabelInput
-              label="dd"
+              label="date.dd"
               placeholder="DD"
               register={register}
               maxLength={2}
+              isValid={!errors[`date`]}
             />
             <LabelInput
-              label="yyyy"
+              label="date.yyyy"
               placeholder="YYYY"
               register={register}
               maxLength={4}
+              isValid={!errors[`date`]}
             />
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex flex-col">
             <span>Pick a time</span>
-            <span className="text-[#B54949] text-[10px] font-medium tracking-[-0.125px]">
-              This field is required
-            </span>
+            {errors['hours'] &&
+              getErrorFromObject(errors['hours']).map((item) => (
+                <span
+                  key={item.error}
+                  className="text-[#B54949] text-[10px] font-medium tracking-[-0.125px]"
+                >
+                  {item.error}
+                </span>
+              ))}
           </div>
           <div className="flex gap-4">
             <LabelInput
-              label="hour"
+              label="hours.hour"
               placeholder="09"
               register={register}
               maxLength={2}
+              isValid={!errors['hours']}
             />
             <LabelInput
-              label="minute"
+              label="hours.minute"
               placeholder="00"
               register={register}
               maxLength={2}
+              isValid={!errors['hours']}
             />
-            <Select handleSelect={handleSelect} selectedItem={selectedItem}/>
+            <Select handleSelect={handleSelect} selectedItem={selectedItem} />
           </div>
         </div>
-        <button type="submit">Click</button>
+        <Button variant="dark" label="MAKE RESERVATION" type="submit" />
       </div>
     </form>
   );
