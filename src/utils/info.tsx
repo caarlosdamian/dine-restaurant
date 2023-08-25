@@ -86,3 +86,12 @@ export const sectionInfo = [
     ],
   },
 ];
+
+export const options = [
+  {
+    id: 'am',
+  },
+  {
+    id: 'pm',
+  },
+];
