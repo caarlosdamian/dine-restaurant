@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Select } from '../select/Select';
 import { Button } from '..';
+import { Counter } from '../counter/Counter';
 
 const schema = yup
   .object({
@@ -32,6 +33,7 @@ export const Form = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
   const [selectedItem, setSelectedItem] = useState('am');
+  const [people, setPeople] = useState(1);
   const handleSelect = (id: string) => {
     setSelectedItem(id);
   };
@@ -47,12 +49,21 @@ export const Form = () => {
     return errorsArray;
   };
 
+  const handleCounter = (action: string) => {
+    if (action === 'increment' && people < 20) {
+      setPeople((prev) => prev + 1);
+    } else if (action === 'decrement' && people > 1) {
+      setPeople((prev) => prev - 1);
+    }
+  };
+
   return (
     <form
       onSubmit={handleSubmit((data: FormData) => {
         const formData = {
           ...data,
           hours: { ...data.hours, meridian: selectedItem },
+          people,
         };
       })}
       className="bg-white h-[536px] relative flex flex-col"
@@ -155,6 +166,7 @@ export const Form = () => {
             <Select handleSelect={handleSelect} selectedItem={selectedItem} />
           </div>
         </div>
+        <Counter people={people} handleChange={handleCounter} />
         <Button variant="dark" label="MAKE RESERVATION" type="submit" />
       </div>
     </form>
